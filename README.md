@@ -38,9 +38,9 @@ Let's look at each part of the data package you will transfer.
 It is critical that you include the rawest form of the data that you have access to. Here are some examples of the
 raw form of data:
 
-* The strange [binary file](http://en.wikipedia.org/wiki/Binary_file) your measurement machine spits out
+* The strange [binary file](https://en.wikipedia.org/wiki/Binary_file) your measurement machine spits out
 * The unformatted Excel file with 10 worksheets the company you contracted with sent you
-* The complicated [JSON](http://en.wikipedia.org/wiki/JSON) data you got from scraping the [Twitter API](https://twitter.com/twitterapi)
+* The complicated [JSON](https://en.wikipedia.org/wiki/JSON) data you got from scraping the [Twitter API](https://twitter.com/twitterapi)
 * The hand-entered numbers you collected looking through a microscope
 
 You know the raw data is in the right format if you: 
@@ -57,7 +57,7 @@ forensic study of your data to figure out why the raw data looks weird.
 ### The tidy data set
 
 The general principles of tidy data are laid out by [Hadley Wickham](http://had.co.nz/) in [this paper](http://vita.had.co.nz/papers/tidy-data.pdf)
-and [this video](http://vimeo.com/33727555). The paper and the video are both focused on the [R](http://www.r-project.org/) package, which you
+and [this video](https://vimeo.com/33727555). The paper and the video are both focused on the [R](http://www.r-project.org/) package, which you
 may or may not know how to use. Regardless the four general principles you should pay attention to are:
 
 1. Each variable you measure should be in one column
@@ -72,7 +72,7 @@ of something like `ADx` or another abbreviation that may be hard for another per
 
 
 Here is an example of how this would work from genomics. Suppose that for 20 people you have collected gene expression measurements with 
-[RNA-sequencing](http://en.wikipedia.org/wiki/RNA-Seq). You have also collected demographic and clinical information
+[RNA-sequencing](https://en.wikipedia.org/wiki/RNA-Seq). You have also collected demographic and clinical information
 about the patients including their age, treatment, and diagnosis. You would have one table/spreadsheet that contains the clinical/demographic
 information. It would have four columns (patient id, age, treatment, diagnosis) and 21 rows (a row with variable names, then one row
 for every patient). You would also have one spreadsheet for the summarized genomic data. Usually this type of data
@@ -82,7 +82,7 @@ ids and one row for each data type).
 
 If you are sharing your data with the collaborator in Excel, the tidy data should be in one Excel file per table. They
 should not have multiple worksheets, no macros should be applied to the data, and no columns/cells should be highlighted. 
-Alternatively share the data in a [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) or [TAB-delimited](http://en.wikipedia.org/wiki/Tab-separated_values) text file.
+Alternatively share the data in a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [TAB-delimited](https://en.wikipedia.org/wiki/Tab-separated_values) text file.
 
 
 ### The code book
@@ -107,7 +107,7 @@ units.
 
 ### How to code variables
 
-When you put variables into a spreadsheet there are several main categories you will run into depending on their [data type](http://en.wikipedia.org/wiki/Statistical_data_type):
+When you put variables into a spreadsheet there are several main categories you will run into depending on their [data type](https://en.wikipedia.org/wiki/Statistical_data_type):
 
 1. Continuous
 1. Ordinal
@@ -116,16 +116,15 @@ When you put variables into a spreadsheet there are several main categories you 
 1. Censored
 
 Continuous variables are anything measured on a quantitative scale that could be any fractional number. An example
-would be something like weight measured in kg. [Ordinal data](http://en.wikipedia.org/wiki/Ordinal_data) are data that have a fixed, small (< 100) number of levels but are ordered. 
-This could be for example survey responses where the choices are: poor, fair, good. [Categorical data](http://en.wikipedia.org/wiki/Categorical_variable) are data where there
-are multiple categories, but they aren't ordered. One example would be sex: male or female. [Missing data](http://en.wikipedia.org/wiki/Missing_data) are data
-that are missing and you don't know the mechanism. You should code missing values as `NA`. [Censored data](http://en.wikipedia.org/wiki/Censoring_(statistics\)) are data
+would be something like weight measured in kg. [Ordinal data](https://en.wikipedia.org/wiki/Ordinal_data) are data that have a fixed, small (< 100) number of levels but are ordered. 
+This could be for example survey responses where the choices are: poor, fair, good. [Categorical data](https://en.wikipedia.org/wiki/Categorical_variable) are data where there
+are multiple categories, but they aren't ordered. One example would be sex: male or female. [Missing data](https://en.wikipedia.org/wiki/Missing_data) are data
+that are missing and you don't know the mechanism. You should code missing values as `NA`. [Censored data](https://en.wikipedia.org/wiki/Censoring_%28statistics%29) are data
 where you know the missingness mechanism on some level. Common examples are a measurement being below a detection limit
 or a patient being lost to follow-up. They should also be coded as `NA` when you don't have the data. But you should
 also add a new column to your tidy data called, "VariableNameCensored" which should have values of `TRUE` if censored 
 and `FALSE` if not. In the code book you should explain why those values are missing. It is absolutely critical to report
-to the analyst if there is a reason you know about that some of the data are missing. You should also not [impute](http://en.wikipedia.org/wiki/Imputation_(statistics\))/make up/
-throw away missing observations.
+to the analyst if there is a reason you know about that some of the data are missing. You should also not [impute](https://en.wikipedia.org/wiki/Imputation_%28statistics%29)—make up—or throw away missing observations.
 
 In general, try to avoid coding categorical or ordinal variables as numbers. When you enter the value for sex in the tidy
 data, it should be "male" or "female". The ordinal values in the data set should be "poor", "fair", and "good" not 1, 2 ,3.
